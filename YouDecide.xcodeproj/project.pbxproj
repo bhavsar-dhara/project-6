@@ -101,6 +101,9 @@
 		D67656B4285BC3BD00506993 /* YouDecide */ = {
 			isa = PBXGroup;
 			children = (
+				D67656EA285BC3EF00506993 /* Model */,
+				D67656E9285BC3E700506993 /* View */,
+				D67656E8285BC3E000506993 /* Controller */,
 				D67656B5285BC3BD00506993 /* AppDelegate.swift */,
 				D67656B7285BC3BD00506993 /* SceneDelegate.swift */,
 				D67656B9285BC3BD00506993 /* ViewController.swift */,
@@ -128,6 +131,27 @@
 				D67656DB285BC3BF00506993 /* YouDecideUITestsLaunchTests.swift */,
 			);
 			path = YouDecideUITests;
+			sourceTree = "<group>";
+		};
+		D67656E8285BC3E000506993 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		D67656E9285BC3E700506993 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D67656EA285BC3EF00506993 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
