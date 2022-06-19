@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="TKu-xM-9Ze">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="YouDecide" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="I9h-av-IUb"/>
+                    <connections>
+                        <segue destination="gSv-Gk-8dq" kind="show" id="qGq-mi-XED"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1301" y="-548"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="ksY-vX-CJj">
+            <objects>
+                <navigationController id="TKu-xM-9Ze" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="uvS-lW-Zqb">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="9CX-kM-MbY"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tMe-2Z-Zu8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="449" y="-548"/>
+        </scene>
+        <!--Main View Controller-->
+        <scene sceneID="AQR-QK-N02">
+            <objects>
+                <viewController id="gSv-Gk-8dq" userLabel="Main View Controller" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="wo7-OV-a5V">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="paperplane" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="7Lb-k3-RkM">
+                                <rect key="frame" x="87" y="88.5" width="240" height="128"/>
+                                <color key="tintColor" systemColor="opaqueSeparatorColor"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="My Travel Journal" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6gx-FV-EHb">
+                                <rect key="frame" x="0.0" y="226" width="414" height="44"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Enter Your Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WYe-GA-afE">
+                                <rect key="frame" x="107" y="431" width="200" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YpF-xq-Bix">
+                                <rect key="frame" x="107" y="495" width="200" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5iE-Km-kb5">
+                                <rect key="frame" x="107" y="559" width="200" height="34"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Enter">
+                                    <color key="baseForegroundColor" systemColor="labelColor"/>
+                                    <color key="baseBackgroundColor" systemColor="opaqueSeparatorColor"/>
+                                </buttonConfiguration>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="y2E-GZ-pm5"/>
+                        <color key="backgroundColor" systemColor="systemBlueColor"/>
+                        <constraints>
+                            <constraint firstItem="YpF-xq-Bix" firstAttribute="top" secondItem="WYe-GA-afE" secondAttribute="bottom" constant="30" id="6BL-oJ-86r"/>
+                            <constraint firstItem="6gx-FV-EHb" firstAttribute="centerX" secondItem="y2E-GZ-pm5" secondAttribute="centerX" id="DMA-lL-oUC"/>
+                            <constraint firstItem="6gx-FV-EHb" firstAttribute="top" secondItem="7Lb-k3-RkM" secondAttribute="bottom" constant="10" id="FTg-mD-viC"/>
+                            <constraint firstItem="7Lb-k3-RkM" firstAttribute="top" secondItem="y2E-GZ-pm5" secondAttribute="top" id="Mni-G6-v2F"/>
+                            <constraint firstItem="YpF-xq-Bix" firstAttribute="centerX" secondItem="y2E-GZ-pm5" secondAttribute="centerX" id="YAF-sy-Mv8"/>
+                            <constraint firstItem="5iE-Km-kb5" firstAttribute="centerX" secondItem="y2E-GZ-pm5" secondAttribute="centerX" id="bbB-Ie-lwg"/>
+                            <constraint firstItem="WYe-GA-afE" firstAttribute="centerX" secondItem="y2E-GZ-pm5" secondAttribute="centerX" id="cb8-uN-rpF"/>
+                            <constraint firstItem="WYe-GA-afE" firstAttribute="top" secondItem="6gx-FV-EHb" secondAttribute="bottom" constant="161" id="gL0-Ii-0GX"/>
+                            <constraint firstItem="5iE-Km-kb5" firstAttribute="top" secondItem="YpF-xq-Bix" secondAttribute="bottom" constant="30" id="pIC-eo-5ai"/>
+                            <constraint firstItem="7Lb-k3-RkM" firstAttribute="centerX" secondItem="y2E-GZ-pm5" secondAttribute="centerX" id="yCb-WG-sox"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="6FB-ZN-zB1"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QAc-Go-IUJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2128.985507246377" y="-548.4375"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="paperplane" catalog="system" width="128" height="118"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="opaqueSeparatorColor">
+            <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBlueColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
