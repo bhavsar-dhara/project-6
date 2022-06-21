@@ -23,8 +23,7 @@ class ViewController: UIViewController {
         view.addSubview(logoImageView)
         
         DispatchQueue.main.asyncAfter(deadline: .now()+3){
-//            let homeVC = HomeVC(nibName: "HomeVC", bundle: nil)
-//            self.navigationController?.pushViewController(homeVC, animated: true)
+            self.performSegue(withIdentifier: "showHome", sender: nil)
         }
     }
 

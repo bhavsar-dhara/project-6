@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class CollectionViewCell: UICollectionViewCell {
+class PlaceDetailViewCell: UICollectionViewCell {
 
     @IBOutlet weak var placeImg: UIImageView!
     @IBOutlet weak var placeName: UILabel!

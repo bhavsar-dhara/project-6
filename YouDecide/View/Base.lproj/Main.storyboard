@@ -21,7 +21,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="I9h-av-IUb"/>
                     <connections>
-                        <segue destination="gSv-Gk-8dq" kind="show" id="qGq-mi-XED"/>
+                        <segue destination="lav-7e-34b" kind="show" identifier="showHome" id="Gtr-UZ-v7e"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -98,9 +98,6 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="6FB-ZN-zB1"/>
-                    <connections>
-                        <segue destination="lav-7e-34b" kind="show" id="vSi-Pu-fW4"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QAc-Go-IUJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -155,6 +152,9 @@
                     <navigationItem key="navigationItem" id="lkj-qc-JkU">
                         <barButtonItem key="rightBarButtonItem" image="plus" catalog="system" id="oqK-YQ-55w"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="collectionView" destination="Wun-Ym-GGv" id="AeP-Hf-2Av"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Dr-zB-ekD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -163,7 +163,7 @@
         <!--Place Detail View Controller-->
         <scene sceneID="ehj-G5-jcl">
             <objects>
-                <viewController id="LfU-dk-WHh" userLabel="Place Detail View Controller" sceneMemberID="viewController">
+                <viewController id="LfU-dk-WHh" userLabel="Place Detail View Controller" customClass="PlaceDetailViewController" customModule="YouDecide" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="52a-dh-JMN">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -187,6 +187,9 @@
                                         </fragment>
                                     </attributedString>
                                 </buttonConfiguration>
+                                <connections>
+                                    <segue destination="ycf-ZL-SxN" kind="show" identifier="showLocation" id="HNp-lw-Iox"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="50m-B4-DAQ">
                                 <rect key="frame" x="223" y="94" width="180" height="135"/>
@@ -201,6 +204,9 @@
                                         </fragment>
                                     </attributedString>
                                 </buttonConfiguration>
+                                <connections>
+                                    <segue destination="SpV-6y-9up" kind="show" identifier="showGallery" id="A4I-Su-r6j"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="7Oa-JL-5NP"/>
@@ -220,13 +226,13 @@
         <!--Gallery View Controller-->
         <scene sceneID="2fS-RY-2Ex">
             <objects>
-                <viewController id="SpV-6y-9up" userLabel="Gallery View Controller" sceneMemberID="viewController">
+                <viewController id="SpV-6y-9up" userLabel="Gallery View Controller" customClass="GalleryViewController" customModule="YouDecide" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7Bn-64-L2j">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="I9r-7i-29W">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="mb7-fY-bsj">
                                     <size key="itemSize" width="128" height="128"/>
@@ -270,13 +276,13 @@
         <!--Location View Controller-->
         <scene sceneID="MM5-Hv-iq7">
             <objects>
-                <viewController id="ycf-ZL-SxN" userLabel="Location View Controller" sceneMemberID="viewController">
+                <viewController id="ycf-ZL-SxN" userLabel="Location View Controller" customClass="LocationViewController" customModule="YouDecide" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="b7C-PE-v4Y">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="A3R-lz-jOT">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                             </mapView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="PFF-nU-7Dl"/>

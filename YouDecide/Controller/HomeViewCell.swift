@@ -8,8 +8,9 @@
 import Foundation
 import UIKit
 
-class HomeCell: UICollectionViewCell {
+class HomeViewCell: UICollectionViewCell {
 
     @IBOutlet weak var placeName: UILabel!
 
+    static let reuseIdentifier = "HomeCell"
 }

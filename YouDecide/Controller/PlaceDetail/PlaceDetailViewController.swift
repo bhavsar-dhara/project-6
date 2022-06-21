@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class PlaceDetailVC: UIViewController {
+class PlaceDetailViewController: UIViewController {
 
     @IBOutlet weak var navigationBar: UINavigationBar!
     
