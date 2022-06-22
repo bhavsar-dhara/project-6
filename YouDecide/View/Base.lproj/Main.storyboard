@@ -118,7 +118,7 @@
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="OPF-xG-QWb">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="OPF-xG-QWb" customClass="HomeViewCell" customModule="YouDecide" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Al0-AZ-7bG">
@@ -146,14 +146,24 @@
                                     </constraints>
                                 </collectionViewCellContentView>
                                 <size key="customSize" width="128" height="128"/>
+                                <connections>
+                                    <outlet property="placeImg" destination="ChY-KS-IWk" id="qfs-Sd-qS3"/>
+                                    <outlet property="placeName" destination="rVP-F4-UR1" id="Jnm-OL-pOb"/>
+                                </connections>
                             </collectionViewCell>
                         </cells>
                     </collectionView>
                     <navigationItem key="navigationItem" id="lkj-qc-JkU">
-                        <barButtonItem key="rightBarButtonItem" image="plus" catalog="system" id="oqK-YQ-55w"/>
+                        <barButtonItem key="rightBarButtonItem" image="plus" catalog="system" id="oqK-YQ-55w">
+                            <connections>
+                                <action selector="btnAddSiteClick:" destination="lav-7e-34b" id="pEw-h6-nkz"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="addButton" destination="oqK-YQ-55w" id="iQ7-2K-TFi"/>
                         <outlet property="collectionView" destination="Wun-Ym-GGv" id="AeP-Hf-2Av"/>
+                        <outlet property="navItem" destination="lkj-qc-JkU" id="j66-1Q-zKV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Dr-zB-ekD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -188,6 +198,7 @@
                                     </attributedString>
                                 </buttonConfiguration>
                                 <connections>
+                                    <action selector="btnLocationClick:" destination="LfU-dk-WHh" eventType="touchUpInside" id="p8b-Ak-R6f"/>
                                     <segue destination="ycf-ZL-SxN" kind="show" identifier="showLocation" id="HNp-lw-Iox"/>
                                 </connections>
                             </button>
@@ -205,6 +216,7 @@
                                     </attributedString>
                                 </buttonConfiguration>
                                 <connections>
+                                    <action selector="btnGalleryClick:" destination="LfU-dk-WHh" eventType="touchUpInside" id="34t-qX-mnc"/>
                                     <segue destination="SpV-6y-9up" kind="show" identifier="showGallery" id="A4I-Su-r6j"/>
                                 </connections>
                             </button>
@@ -241,19 +253,27 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="dcq-ei-JwY">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="dcq-ei-JwY" customClass="GalleryViewCell" customModule="YouDecide" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Vat-LP-79f">
                                             <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Y2W-2K-n7g">
-                                                    <rect key="frame" x="-56" y="0.0" width="240" height="128"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Y2W-2K-n7g">
+                                                    <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
                                                 </imageView>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="Y2W-2K-n7g" secondAttribute="trailing" id="UAz-7u-ECh"/>
+                                                <constraint firstAttribute="bottom" secondItem="Y2W-2K-n7g" secondAttribute="bottom" id="gaZ-xp-fM2"/>
+                                                <constraint firstItem="Y2W-2K-n7g" firstAttribute="top" secondItem="Vat-LP-79f" secondAttribute="top" id="nYB-wl-69Q"/>
+                                                <constraint firstItem="Y2W-2K-n7g" firstAttribute="leading" secondItem="Vat-LP-79f" secondAttribute="leading" id="rAM-zO-Ob8"/>
+                                            </constraints>
                                         </collectionViewCellContentView>
+                                        <connections>
+                                            <outlet property="img" destination="Y2W-2K-n7g" id="sUm-AV-yzB"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
@@ -268,6 +288,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Gallery" id="vIP-Ug-w28"/>
+                    <connections>
+                        <outlet property="collectionView" destination="I9r-7i-29W" id="fMZ-Nz-bvM"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="v3p-cx-jai" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -295,6 +318,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Location" id="A5C-Tq-2IQ"/>
+                    <connections>
+                        <outlet property="map" destination="A3R-lz-jOT" id="xXp-w2-DVH"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9nk-mV-Gjd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

@@ -10,6 +10,8 @@ import UIKit
 
 class HomeViewController: UIViewController {
     
+    @IBOutlet weak var navItem: UINavigationItem!
+    @IBOutlet weak var addButton: UIBarButtonItem!
     @IBOutlet weak var collectionView: UICollectionView!
     
     var cellsPerRow = 0
@@ -21,7 +23,7 @@ class HomeViewController: UIViewController {
 
         // Fetching data to update the UI
         DataController.instance.getTravelData()
-        self.navigationController?.navigationBar.isHidden = true
+        self.navigationController?.navigationBar.isHidden = false
         
         collectionView.reloadData()
     }
@@ -79,11 +81,18 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         // Initializing collection view cell
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HomeViewCell.reuseIdentifier, for: indexPath as IndexPath) as! HomeViewCell
+        cell.layer.borderColor = UIColor.lightGray.cgColor
+        cell.layer.borderWidth = 2.0
+        let objEntity = appDelegate.arrTravelData[indexPath.row] as? PlaceDetails
+        cell.placeName.text = objEntity?.name ?? ""
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        // delete/update from the core data
+        // show the place details view
+//        let placeDetailVC = PlaceDetailViewController(nibName: "PlaceDetailViewController", bundle: nil)
+//        placeDetailVC.index = indexPath.row
+//        self.navigationController?.pushViewController(placeDetailVC, animated: true)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

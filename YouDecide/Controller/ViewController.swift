@@ -23,6 +23,7 @@ class ViewController: UIViewController {
         view.addSubview(logoImageView)
         
         DispatchQueue.main.asyncAfter(deadline: .now()+3){
+            debugPrint("ViewController: viewDidLoad: performSegue")
             self.performSegue(withIdentifier: "showHome", sender: nil)
         }
     }
