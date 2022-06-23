@@ -20,11 +20,13 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        debugPrint("HomeVC")
+        // initialize collection view
+        setupCollectionView()
 
         // Fetching data to update the UI
         DataController.instance.getTravelData()
-        self.navigationController?.navigationBar.isHidden = false
-        
         collectionView.reloadData()
     }
     
@@ -68,6 +70,7 @@ class HomeViewController: UIViewController {
 extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func setupCollectionView() {
+        debugPrint("HomeVC: setupCollectionView")
         // Set up Collection View
         collectionView.dataSource = self
         collectionView.delegate = self

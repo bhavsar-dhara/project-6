@@ -23,7 +23,6 @@
 		D67656F2285E914E00506993 /* PlaceInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67656F1285E914E00506993 /* PlaceInfo.swift */; };
 		D67656F4285E915E00506993 /* PlaceCoordinates.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67656F3285E915E00506993 /* PlaceCoordinates.swift */; };
 		D67656FD285FB5D000506993 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67656FC285FB5D000506993 /* DataController.swift */; };
-		D6CE25E42860D542001664AC /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6CE25E32860D542001664AC /* LoginViewController.swift */; };
 		D6CE25E62860D555001664AC /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6CE25E52860D555001664AC /* HomeViewController.swift */; };
 		D6CE25E82860E7A8001664AC /* HomeViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6CE25E72860E7A8001664AC /* HomeViewCell.swift */; };
 		D6CE25EA2860E7F4001664AC /* PlaceDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6CE25E92860E7F4001664AC /* PlaceDetailViewController.swift */; };
@@ -70,7 +69,6 @@
 		D67656F1285E914E00506993 /* PlaceInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceInfo.swift; sourceTree = "<group>"; };
 		D67656F3285E915E00506993 /* PlaceCoordinates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceCoordinates.swift; sourceTree = "<group>"; };
 		D67656FC285FB5D000506993 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
-		D6CE25E32860D542001664AC /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		D6CE25E52860D555001664AC /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		D6CE25E72860E7A8001664AC /* HomeViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewCell.swift; sourceTree = "<group>"; };
 		D6CE25E92860E7F4001664AC /* PlaceDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceDetailViewController.swift; sourceTree = "<group>"; };
@@ -162,8 +160,7 @@
 				D67656F8285FB3B200506993 /* PlaceDetail */,
 				D67656F7285FB39F00506993 /* Gallery */,
 				D67656F6285FB39500506993 /* Home */,
-				D67656F5285FB38A00506993 /* Login */,
-				D67656B9285BC3BD00506993 /* ViewController.swift */,
+				D67656F5285FB38A00506993 /* Splash */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -189,12 +186,12 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		D67656F5285FB38A00506993 /* Login */ = {
+		D67656F5285FB38A00506993 /* Splash */ = {
 			isa = PBXGroup;
 			children = (
-				D6CE25E32860D542001664AC /* LoginViewController.swift */,
+				D67656B9285BC3BD00506993 /* ViewController.swift */,
 			);
-			path = Login;
+			path = Splash;
 			sourceTree = "<group>";
 		};
 		D67656F6285FB39500506993 /* Home */ = {
@@ -243,8 +240,8 @@
 		D67656FB285FB46300506993 /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				D67656F1285E914E00506993 /* PlaceInfo.swift */,
 				D67656F3285E915E00506993 /* PlaceCoordinates.swift */,
+				D67656F1285E914E00506993 /* PlaceInfo.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -394,7 +391,6 @@
 				D6CE25EA2860E7F4001664AC /* PlaceDetailViewController.swift in Sources */,
 				D67656B8285BC3BD00506993 /* SceneDelegate.swift in Sources */,
 				D67656F4285E915E00506993 /* PlaceCoordinates.swift in Sources */,
-				D6CE25E42860D542001664AC /* LoginViewController.swift in Sources */,
 				D6CE25E62860D555001664AC /* HomeViewController.swift in Sources */,
 				D6CE25EE28616286001664AC /* LocationViewController.swift in Sources */,
 			);
