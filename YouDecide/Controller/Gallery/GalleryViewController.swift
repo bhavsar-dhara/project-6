@@ -15,6 +15,7 @@ class GalleryViewController: UIViewController {
     
     private var imagePicker = UIImagePickerController()
     
+    var dataController: DataController!
     var index : Int?
     
     //MARK: - UIViewcontroller methods
@@ -23,7 +24,7 @@ class GalleryViewController: UIViewController {
         
         super.viewDidLoad()
         
-        DataController.instance.getTravelData()
+        DataHelper.instance.getTravelData()
         
         let objLocation = appDelegate.arrTravelData[index!] as! PlaceDetails
         
@@ -63,8 +64,8 @@ extension GalleryViewController : UINavigationControllerDelegate, UIImagePickerC
             ///  Saving selected image into core data
             let obj = appDelegate.arrTravelData[index!] as? PlaceDetails
             let siteName = obj?.name ?? ""
-            DataController.instance.updateImage(title: siteName, image: image)
-            DataController.instance.getTravelData()
+            DataHelper.instance.updateImage(title: siteName, image: image)
+            DataHelper.instance.getTravelData()
         }
         collectionView.reloadData()
         picker.dismiss(animated: true, completion: nil);

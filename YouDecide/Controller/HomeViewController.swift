@@ -14,6 +14,7 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var addButton: UIBarButtonItem!
     @IBOutlet weak var collectionView: UICollectionView!
     
+    var dataController: DataController!
     var cellsPerRow = 0
     
     //MARK: - UIviewcontroller methods
@@ -26,13 +27,13 @@ class HomeViewController: UIViewController {
         setupCollectionView()
 
         // Fetching data to update the UI
-        DataController.instance.getTravelData()
+        DataHelper.instance.getTravelData()
         collectionView.reloadData()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         
-        DataController.instance.getTravelData()
+        DataHelper.instance.getTravelData()
         collectionView.reloadData()
     }
 
@@ -61,8 +62,8 @@ class HomeViewController: UIViewController {
     func savePlace(title : String) {
         
         // Saving name and fetching data to update the UI
-        DataController.instance.savePlaceName(name: title)
-        DataController.instance.getTravelData()
+        DataHelper.instance.savePlaceName(name: title)
+        DataHelper.instance.getTravelData()
         collectionView.reloadData()
     }
 }

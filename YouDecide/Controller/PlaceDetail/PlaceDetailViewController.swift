@@ -12,6 +12,7 @@ class PlaceDetailViewController: UIViewController {
 
     @IBOutlet weak var navigationBar: UINavigationBar!
     
+    var dataController: DataController!
     var index : Int?
     
     //MARK: - UIViewcontroller methods

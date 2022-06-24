@@ -15,9 +15,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var arrPlaces : [PlaceInfo] = []
     var arrTravelData: [NSManagedObject] = []
+    var window: UIWindow?
+    let dataController = DataController(modelName: "YouDecide")
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+//        UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main", bundle: nil]
+//        YourViewController *yourController = (YourViewController *)[mainStoryboard instantiateViewControllerWithIdentifier:@"SplashScreen"]
+//        self.window.rootViewController = yourController
+//
+//        window = UIWindow(frame: UIScreen.main.bounds)
+//        window?.makeKeyAndVisible()
+        
+        let navigationController = window?.rootViewController as! UINavigationController
+        let splashView = navigationController.topViewController as! ViewController
+        splashView.dataController = (UIApplication.shared.delegate as? AppDelegate)?.dataController
+        
         return true
     }
 
@@ -34,51 +48,92 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // If any sessions were discarded while the application was not running, this will be called shortly after application:didFinishLaunchingWithOptions.
         // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
     }
-
-    // MARK: - Core Data stack
-
-    lazy var persistentContainer: NSPersistentContainer = {
-        /*
-         The persistent container for the application. This implementation
-         creates and returns a container, having loaded the store for the
-         application to it. This property is optional since there are legitimate
-         error conditions that could cause the creation of the store to fail.
-        */
-        let container = NSPersistentContainer(name: "YouDecide")
-        container.loadPersistentStores(completionHandler: { (storeDescription, error) in
-            if let error = error as NSError? {
-                // Replace this implementation with code to handle the error appropriately.
-                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-                 
-                /*
-                 Typical reasons for an error here include:
-                 * The parent directory does not exist, cannot be created, or disallows writing.
-                 * The persistent store is not accessible, due to permissions or data protection when the device is locked.
-                 * The device is out of space.
-                 * The store could not be migrated to the current model version.
-                 Check the error message to determine what the actual problem was.
-                 */
-                fatalError("Unresolved error \(error), \(error.userInfo)")
-            }
-        })
-        return container
-    }()
-
-    // MARK: - Core Data Saving support
-
-    func saveContext () {
-        let context = persistentContainer.viewContext
-        if context.hasChanges {
-            do {
-                try context.save()
-            } catch {
-                // Replace this implementation with code to handle the error appropriately.
-                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-                let nserror = error as NSError
-                fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
-            }
-        }
+    
+    func applicationDidEnterBackground(_ application: UIApplication) {
+        saveViewContext()
     }
+
+    func applicationWillTerminate(_ application: UIApplication) {
+        // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+        saveViewContext()
+    }
+
+    func saveViewContext() {
+        try? dataController.viewContext.save()
+    }
+
+//    // MARK: - Core Data stack
+//
+//    lazy var persistentContainer: NSPersistentContainer = {
+//        /*
+//         The persistent container for the application. This implementation
+//         creates and returns a container, having loaded the store for the
+//         application to it. This property is optional since there are legitimate
+//         error conditions that could cause the creation of the store to fail.
+//        */
+//        let container = NSPersistentContainer(name: "YouDecide")
+//        container.loadPersistentStores(completionHandler: { (storeDescription, error) in
+//            if let error = error as NSError? {
+//                // Replace this implementation with code to handle the error appropriately.
+//                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+//
+//                /*
+//                 Typical reasons for an error here include:
+//                 * The parent directory does not exist, cannot be created, or disallows writing.
+//                 * The persistent store is not accessible, due to permissions or data protection when the device is locked.
+//                 * The device is out of space.
+//                 * The store could not be migrated to the current model version.
+//                 Check the error message to determine what the actual problem was.
+//                 */
+//                self.autoSaveViewContext()
+//                self.configureContexts()
+//                fatalError("Unresolved error \(error), \(error.userInfo)")
+//            }
+//        })
+//        return container
+//    }()
+//
+//    var viewContext: NSManagedObjectContext {
+//        return persistentContainer.viewContext
+//    }
+//
+//    func configureContexts() {
+//        viewContext.automaticallyMergesChangesFromParent = true
+//        viewContext.mergePolicy = NSMergePolicy.mergeByPropertyStoreTrump
+//        //viewContext.mergePolicy = NSMergePolicy.mergeByPropertyObjectTrump
+//    }
+//
+//    // MARK: - Core Data Saving support
+//
+//    func saveContext () {
+//        let context = persistentContainer.viewContext
+//        if context.hasChanges {
+//            do {
+//                try context.save()
+//            } catch {
+//                // Replace this implementation with code to handle the error appropriately.
+//                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+//                let nserror = error as NSError
+//                fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
+//            }
+//        }
+//    }
+//
+//    // MARK: - Autosaving
+//
+//    func autoSaveViewContext(interval:TimeInterval = 30) {
+////        debugPrint("autosaving")
+//        guard interval > 0 else {
+//            print("cannot set negative autosave interval")
+//            return
+//        }
+//        if viewContext.hasChanges {
+//            try? viewContext.save()
+//        }
+//        DispatchQueue.main.asyncAfter(deadline: .now() + interval) {
+//            self.autoSaveViewContext(interval: interval)
+//        }
+//    }
 
 }
 

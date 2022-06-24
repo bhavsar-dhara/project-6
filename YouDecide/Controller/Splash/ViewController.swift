@@ -9,6 +9,8 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    var dataController: DataController!
+    
     private var logoImageView: UIImageView = {
         let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 150, height: 150))
         imageView.image = UIImage(systemName: "paperplane")

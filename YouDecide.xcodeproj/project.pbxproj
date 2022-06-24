@@ -22,7 +22,8 @@
 		D67656F0285E90DF00506993 /* PlaceLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67656EF285E90DF00506993 /* PlaceLocation.swift */; };
 		D67656F2285E914E00506993 /* PlaceInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67656F1285E914E00506993 /* PlaceInfo.swift */; };
 		D67656F4285E915E00506993 /* PlaceCoordinates.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67656F3285E915E00506993 /* PlaceCoordinates.swift */; };
-		D67656FD285FB5D000506993 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67656FC285FB5D000506993 /* DataController.swift */; };
+		D67656FD285FB5D000506993 /* DataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67656FC285FB5D000506993 /* DataHelper.swift */; };
+		D69254F52864C6BF0009313B /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D69254F42864C6BF0009313B /* DataController.swift */; };
 		D6CE25E62860D555001664AC /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6CE25E52860D555001664AC /* HomeViewController.swift */; };
 		D6CE25E82860E7A8001664AC /* HomeViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6CE25E72860E7A8001664AC /* HomeViewCell.swift */; };
 		D6CE25EA2860E7F4001664AC /* PlaceDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6CE25E92860E7F4001664AC /* PlaceDetailViewController.swift */; };
@@ -68,7 +69,8 @@
 		D67656EF285E90DF00506993 /* PlaceLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceLocation.swift; sourceTree = "<group>"; };
 		D67656F1285E914E00506993 /* PlaceInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceInfo.swift; sourceTree = "<group>"; };
 		D67656F3285E915E00506993 /* PlaceCoordinates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceCoordinates.swift; sourceTree = "<group>"; };
-		D67656FC285FB5D000506993 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
+		D67656FC285FB5D000506993 /* DataHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataHelper.swift; sourceTree = "<group>"; };
+		D69254F42864C6BF0009313B /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 		D6CE25E52860D555001664AC /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		D6CE25E72860E7A8001664AC /* HomeViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewCell.swift; sourceTree = "<group>"; };
 		D6CE25E92860E7F4001664AC /* PlaceDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceDetailViewController.swift; sourceTree = "<group>"; };
@@ -181,7 +183,8 @@
 				D67656FB285FB46300506993 /* Data */,
 				D67656FA285FB44200506993 /* Response */,
 				D67656EB285E38BE00506993 /* UserDataManager.swift */,
-				D67656FC285FB5D000506993 /* DataController.swift */,
+				D67656FC285FB5D000506993 /* DataHelper.swift */,
+				D69254F42864C6BF0009313B /* DataController.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -384,7 +387,8 @@
 				D67656F2285E914E00506993 /* PlaceInfo.swift in Sources */,
 				D6CE25F228616407001664AC /* GalleryViewCell.swift in Sources */,
 				D67656F0285E90DF00506993 /* PlaceLocation.swift in Sources */,
-				D67656FD285FB5D000506993 /* DataController.swift in Sources */,
+				D69254F52864C6BF0009313B /* DataController.swift in Sources */,
+				D67656FD285FB5D000506993 /* DataHelper.swift in Sources */,
 				D67656C0285BC3BD00506993 /* YouDecide.xcdatamodeld in Sources */,
 				D67656B6285BC3BD00506993 /* AppDelegate.swift in Sources */,
 				D6CE25E82860E7A8001664AC /* HomeViewCell.swift in Sources */,
@@ -579,6 +583,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -607,6 +612,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
