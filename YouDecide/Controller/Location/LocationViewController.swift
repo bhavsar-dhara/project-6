@@ -80,7 +80,7 @@ class LocationViewController: UIViewController {
                     
     @objc func saveTapped() {
         
-        DataController.instance.updatePlaceLocation(title: (appDelegate.arrTravelData[index!] as? PlaceDetails)?.name ?? "", lat: locationManager.location?.coordinate.latitude ?? 0.0, long: locationManager.location?.coordinate.longitude ?? 0.0)
+        DataHelper.instance.updatePlaceLocation(title: (appDelegate.arrTravelData[index!] as? PlaceDetails)?.name ?? "", lat: locationManager.location?.coordinate.latitude ?? 0.0, long: locationManager.location?.coordinate.longitude ?? 0.0)
         self.navigationController?.popViewController(animated: true)
     }
 }

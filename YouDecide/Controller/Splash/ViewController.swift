@@ -9,6 +9,8 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    var dataController: DataController?
+    
     private var logoImageView: UIImageView = {
         let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 150, height: 150))
         imageView.image = UIImage(systemName: "paperplane")
@@ -36,6 +38,11 @@ class ViewController: UIViewController {
         DispatchQueue.main.asyncAfter(deadline: .now()+0){
             self.animate()
         }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let homeViewController = segue.destination as? HomeViewController else { return }
+        homeViewController.dataController = dataController
     }
     
     private func animate(){

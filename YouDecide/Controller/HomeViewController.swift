@@ -14,6 +14,7 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var addButton: UIBarButtonItem!
     @IBOutlet weak var collectionView: UICollectionView!
     
+    var dataController: DataController?
     var cellsPerRow = 0
     
     //MARK: - UIviewcontroller methods
@@ -26,19 +27,21 @@ class HomeViewController: UIViewController {
         setupCollectionView()
 
         // Fetching data to update the UI
-        DataController.instance.getTravelData()
+        DataHelper.instance.getTravelData()
         collectionView.reloadData()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         
-        DataController.instance.getTravelData()
+        DataHelper.instance.getTravelData()
         collectionView.reloadData()
     }
 
     //MARK: - Button click methods
     
-    @IBAction func btnAddSiteClick(_ sender: Any) {
+    @IBAction func btnAddPlaceClick(_ sender: Any) {
+        
+        debugPrint("btnAddPlaceClick")
         
         // Presenting alert to enter place name
         let alert = UIAlertController(title: "Travel diaries", message: "Enter place name", preferredStyle: .alert)
@@ -61,8 +64,8 @@ class HomeViewController: UIViewController {
     func savePlace(title : String) {
         
         // Saving name and fetching data to update the UI
-        DataController.instance.savePlaceName(name: title)
-        DataController.instance.getTravelData()
+        DataHelper.instance.savePlaceName(name: title)
+        DataHelper.instance.getTravelData()
         collectionView.reloadData()
     }
 }
@@ -74,7 +77,6 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
         // Set up Collection View
         collectionView.dataSource = self
         collectionView.delegate = self
-        collectionView.allowsMultipleSelection = true
     }
  
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

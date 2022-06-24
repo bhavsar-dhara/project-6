@@ -12,5 +12,5 @@ class GalleryViewCell: UICollectionViewCell {
     
     @IBOutlet weak var img: UIImageView!
 
-    static let reuseIdentifier = "GalleryCell"
+    static let reuseIdentifier = "GalleryViewCell"
 }

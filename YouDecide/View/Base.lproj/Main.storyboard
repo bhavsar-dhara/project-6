@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="TKu-xM-9Ze">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -20,6 +21,9 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="I9h-av-IUb"/>
+                    <connections>
+                        <segue destination="lav-7e-34b" kind="show" identifier="showHome" id="JGc-bB-k6m"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -34,7 +38,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="lav-7e-34b" kind="relationship" relationship="rootViewController" id="kMI-3v-RHG"/>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="Ikk-Yh-S4j"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tMe-2Z-Zu8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -45,63 +49,66 @@
         <scene sceneID="OrQ-WT-Gnd">
             <objects>
                 <viewController id="lav-7e-34b" userLabel="Home View Controller" customClass="HomeViewController" customModule="YouDecide" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="Wun-Ym-GGv">
+                    <view key="view" contentMode="scaleToFill" id="pWi-kh-gpa">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="dtR-1b-58Y">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="WnV-Mt-0Wh">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="ONf-sO-RXr" customClass="HomeViewCell" customModule="YouDecide" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="cSp-Cv-R3i">
+                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8dV-cu-NID">
+                                                    <rect key="frame" x="43" y="53.5" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="8dV-cu-NID" firstAttribute="centerY" secondItem="cSp-Cv-R3i" secondAttribute="centerY" id="IKV-t4-5mE"/>
+                                                <constraint firstItem="8dV-cu-NID" firstAttribute="centerX" secondItem="cSp-Cv-R3i" secondAttribute="centerX" id="QTW-mS-O4f"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                        <connections>
+                                            <outlet property="placeName" destination="8dV-cu-NID" id="79u-jH-GXi"/>
+                                            <segue destination="LfU-dk-WHh" kind="show" identifier="showDetail" id="CmW-Au-L9f"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="3GY-xJ-CF1"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Im3-WO-Q0x">
-                            <size key="itemSize" width="128" height="128"/>
-                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                        </collectionViewFlowLayout>
-                        <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="OPF-xG-QWb" customClass="HomeViewCell" customModule="YouDecide" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Al0-AZ-7bG">
-                                    <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ChY-KS-IWk" userLabel="Place Img">
-                                            <rect key="frame" x="0.0" y="0.0" width="128" height="98"/>
-                                        </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rVP-F4-UR1" userLabel="Place Name">
-                                            <rect key="frame" x="0.0" y="94" width="128" height="34"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                    <constraints>
-                                        <constraint firstItem="ChY-KS-IWk" firstAttribute="leading" secondItem="Al0-AZ-7bG" secondAttribute="leading" id="BrK-x9-XkE"/>
-                                        <constraint firstItem="ChY-KS-IWk" firstAttribute="trailing" secondItem="Al0-AZ-7bG" secondAttribute="trailing" id="SEF-yE-AaW"/>
-                                        <constraint firstItem="rVP-F4-UR1" firstAttribute="leading" secondItem="Al0-AZ-7bG" secondAttribute="leading" id="TYf-1W-fGi"/>
-                                        <constraint firstAttribute="bottom" secondItem="rVP-F4-UR1" secondAttribute="bottom" id="c5D-8W-HnH"/>
-                                        <constraint firstItem="ChY-KS-IWk" firstAttribute="bottom" secondItem="Al0-AZ-7bG" secondAttribute="bottom" constant="-30" id="tYI-L5-HEd"/>
-                                        <constraint firstItem="ChY-KS-IWk" firstAttribute="top" secondItem="Al0-AZ-7bG" secondAttribute="top" id="ypx-1a-xkT"/>
-                                        <constraint firstItem="rVP-F4-UR1" firstAttribute="trailing" secondItem="Al0-AZ-7bG" secondAttribute="trailing" id="zE9-oh-Kwh"/>
-                                    </constraints>
-                                </collectionViewCellContentView>
-                                <size key="customSize" width="128" height="128"/>
-                                <connections>
-                                    <outlet property="placeImg" destination="ChY-KS-IWk" id="qfs-Sd-qS3"/>
-                                    <outlet property="placeName" destination="rVP-F4-UR1" id="Jnm-OL-pOb"/>
-                                    <segue destination="LfU-dk-WHh" kind="show" identifier="showDetail" id="tco-MA-jwp"/>
-                                </connections>
-                            </collectionViewCell>
-                        </cells>
-                    </collectionView>
+                        <constraints>
+                            <constraint firstItem="dtR-1b-58Y" firstAttribute="trailing" secondItem="3GY-xJ-CF1" secondAttribute="trailing" id="0v2-sl-1D2"/>
+                            <constraint firstItem="dtR-1b-58Y" firstAttribute="top" secondItem="3GY-xJ-CF1" secondAttribute="top" id="1u7-IY-AqS"/>
+                            <constraint firstItem="dtR-1b-58Y" firstAttribute="bottom" secondItem="3GY-xJ-CF1" secondAttribute="bottom" id="nuW-zb-chY"/>
+                            <constraint firstItem="dtR-1b-58Y" firstAttribute="leading" secondItem="3GY-xJ-CF1" secondAttribute="leading" id="o4l-ns-4fl"/>
+                        </constraints>
+                    </view>
                     <navigationItem key="navigationItem" title="Add Places" id="lkj-qc-JkU">
                         <barButtonItem key="rightBarButtonItem" image="plus" catalog="system" id="oqK-YQ-55w">
                             <connections>
-                                <action selector="btnAddSiteClick:" destination="lav-7e-34b" id="pEw-h6-nkz"/>
+                                <action selector="btnAddPlaceClick:" destination="lav-7e-34b" id="tUm-tM-My6"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="addButton" destination="oqK-YQ-55w" id="iQ7-2K-TFi"/>
-                        <outlet property="collectionView" destination="Wun-Ym-GGv" id="AeP-Hf-2Av"/>
+                        <outlet property="collectionView" destination="dtR-1b-58Y" id="eYf-pc-zlF"/>
                         <outlet property="navItem" destination="lkj-qc-JkU" id="j66-1Q-zKV"/>
                     </connections>
                 </viewController>
@@ -126,14 +133,8 @@
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PpV-wO-oS6">
                                 <rect key="frame" x="15" y="178" width="180" height="135"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="gray">
-                                    <attributedString key="attributedTitle">
-                                        <fragment content="Location">
-                                            <attributes>
-                                                <font key="NSFont" size="24" name="Helvetica-Bold"/>
-                                            </attributes>
-                                        </fragment>
-                                    </attributedString>
+                                <buttonConfiguration key="configuration" style="gray" title="Location">
+                                    <fontDescription key="titleFontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="24"/>
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="btnLocationClick:" destination="LfU-dk-WHh" eventType="touchUpInside" id="p8b-Ak-R6f"/>
@@ -143,14 +144,8 @@
                             <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="50m-B4-DAQ">
                                 <rect key="frame" x="219" y="178" width="180" height="135"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="gray">
-                                    <attributedString key="attributedTitle">
-                                        <fragment content="Gallery">
-                                            <attributes>
-                                                <font key="NSFont" size="24" name="Helvetica-Bold"/>
-                                            </attributes>
-                                        </fragment>
-                                    </attributedString>
+                                <buttonConfiguration key="configuration" style="gray" title="Gallery">
+                                    <fontDescription key="titleFontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="24"/>
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="btnGalleryClick:" destination="LfU-dk-WHh" eventType="touchUpInside" id="34t-qX-mnc"/>
