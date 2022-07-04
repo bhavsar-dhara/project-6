@@ -25,6 +25,7 @@ class HomeViewController: UIViewController {
         debugPrint("HomeVC")
         // initialize collection view
         setupCollectionView()
+        collectionView.register(HomeViewCell.self, forCellWithReuseIdentifier: HomeViewCell.reuseIdentifier)
 
         // Fetching data to update the UI
         DataHelper.instance.getTravelData()
@@ -89,7 +90,8 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
         cell.layer.borderColor = UIColor.lightGray.cgColor
         cell.layer.borderWidth = 2.0
         let objEntity = appDelegate.arrTravelData[indexPath.row] as? PlaceDetails
-        cell.placeName.text = objEntity?.name ?? ""
+        debugPrint("objEntity = ", objEntity?.name ?? "")
+        cell.setLabelText(text: objEntity?.name ?? "")
         return cell
     }
     

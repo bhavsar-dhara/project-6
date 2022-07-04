@@ -63,7 +63,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="ONf-sO-RXr" customClass="HomeViewCell" customModule="YouDecide" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="ONf-sO-RXr" userLabel="HomeCell" customClass="HomeViewCell" customModule="YouDecide" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="cSp-Cv-R3i">
@@ -83,7 +83,7 @@
                                             </constraints>
                                         </collectionViewCellContentView>
                                         <connections>
-                                            <outlet property="placeName" destination="8dV-cu-NID" id="79u-jH-GXi"/>
+                                            <outlet property="placeLabel" destination="8dV-cu-NID" id="ftm-Zw-YhL"/>
                                             <segue destination="LfU-dk-WHh" kind="show" identifier="showDetail" id="CmW-Au-L9f"/>
                                         </connections>
                                     </collectionViewCell>
@@ -265,7 +265,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="plus" catalog="system" width="32" height="32"/>
+        <image name="plus" catalog="system" width="128" height="113"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

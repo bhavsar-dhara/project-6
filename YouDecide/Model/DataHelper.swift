@@ -24,6 +24,7 @@ class DataHelper {
         objEntityLocation.name = name
         
         do {
+            debugPrint("name: ", name)
             try managedContext.save()
         } catch let error as NSError {
             print("Could not save the place name. \(error), \(error.userInfo)")
