@@ -10,21 +10,34 @@ import UIKit
 
 class PlaceDetailViewController: UIViewController {
 
-    @IBOutlet weak var navigationBar: UINavigationBar!
+    @IBOutlet weak var navItem: UINavigationItem!
     
-    var index : Int?
+    var index : Int? {
+        didSet {
+            debugPrint("PlaceDetailVC - index - ")
+            updateUI()
+            
+        }
+    }
     
     //MARK: - UIViewcontroller methods
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let objLocation = appDelegate.arrTravelData[index!] as! PlaceDetails
-
-        let item = UINavigationItem()
-        item.leftBarButtonItem = UIBarButtonItem(title: "Back", style: .plain, target: self, action: #selector(addTapped))
-        navigationBar.items = [item]
-        navigationBar.topItem?.title = objLocation.name ?? ""
+        debugPrint("PlaceDetailVC - viewDidLoad - ")
+        updateUI()
+    }
+    
+    func updateUI() {
+        // https://stackoverflow.com/questions/51967571/cant-pass-data-via-segue
+        // this method is being called twice now - TODO
+        if let index = index {
+            debugPrint("PlaceDetailVC - updateUI - ", index)
+            let objLocation = appDelegate.arrTravelData[index] as! PlaceDetails
+            
+            navItem.title = objLocation.name ?? ""
+        }
     }
     
     //MARK: - Button click methods

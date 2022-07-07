@@ -25,7 +25,7 @@ class HomeViewController: UIViewController {
         debugPrint("HomeVC")
         // initialize collection view
         setupCollectionView()
-        collectionView.register(HomeViewCell.self, forCellWithReuseIdentifier: HomeViewCell.reuseIdentifier)
+        //collectionView.register(HomeViewCell.self, forCellWithReuseIdentifier: HomeViewCell.reuseIdentifier)
 
         // Fetching data to update the UI
         DataHelper.instance.getTravelData()
@@ -36,6 +36,18 @@ class HomeViewController: UIViewController {
         
         DataHelper.instance.getTravelData()
         collectionView.reloadData()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+            
+        debugPrint("HomeVC: prepare: ", sender as? Int)
+        if (segue.identifier == "showDetail") {
+            guard let placeDetailVC = segue.destination as? PlaceDetailViewController else {
+                debugPrint("segue.destination is not PlaceDetailViewController")
+                return
+            }
+            placeDetailVC.index = sender as? Int
+        }
     }
 
     //MARK: - Button click methods
@@ -78,6 +90,7 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
         // Set up Collection View
         collectionView.dataSource = self
         collectionView.delegate = self
+        collectionView.allowsMultipleSelection = true
     }
  
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -91,12 +104,14 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
         cell.layer.borderWidth = 2.0
         let objEntity = appDelegate.arrTravelData[indexPath.row] as? PlaceDetails
         debugPrint("objEntity = ", objEntity?.name ?? "")
-        cell.setLabelText(text: objEntity?.name ?? "")
+        cell.placeLabel.text = objEntity?.name ?? ""
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         // show the place details view
+        self.performSegue(withIdentifier: "showDetail", sender: indexPath.row)
+        
 //        let placeDetailVC = PlaceDetailViewController(nibName: "PlaceDetailViewController", bundle: nil)
 //        placeDetailVC.index = indexPath.row
 //        self.navigationController?.pushViewController(placeDetailVC, animated: true)
