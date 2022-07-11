@@ -84,7 +84,6 @@
                                         </collectionViewCellContentView>
                                         <connections>
                                             <outlet property="placeLabel" destination="8dV-cu-NID" id="ftm-Zw-YhL"/>
-                                            <segue destination="LfU-dk-WHh" kind="show" identifier="showDetail" id="CmW-Au-L9f"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -110,6 +109,7 @@
                         <outlet property="addButton" destination="oqK-YQ-55w" id="iQ7-2K-TFi"/>
                         <outlet property="collectionView" destination="dtR-1b-58Y" id="eYf-pc-zlF"/>
                         <outlet property="navItem" destination="lkj-qc-JkU" id="j66-1Q-zKV"/>
+                        <segue destination="LfU-dk-WHh" kind="show" identifier="showDetail" id="AIF-al-NCp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Dr-zB-ekD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -138,7 +138,6 @@
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="btnLocationClick:" destination="LfU-dk-WHh" eventType="touchUpInside" id="p8b-Ak-R6f"/>
-                                    <segue destination="ycf-ZL-SxN" kind="show" identifier="showLocation" id="HNp-lw-Iox"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="50m-B4-DAQ">
@@ -149,7 +148,6 @@
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="btnGalleryClick:" destination="LfU-dk-WHh" eventType="touchUpInside" id="34t-qX-mnc"/>
-                                    <segue destination="SpV-6y-9up" kind="show" identifier="showGallery" id="A4I-Su-r6j"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -169,6 +167,9 @@
                     <navigationItem key="navigationItem" title="Place Detail" id="9u0-hb-4mY"/>
                     <connections>
                         <outlet property="navItem" destination="9u0-hb-4mY" id="HjZ-z9-2Th"/>
+                        <outlet property="placeName" destination="cAP-Rn-xZe" id="8sS-3n-4Dc"/>
+                        <segue destination="ycf-ZL-SxN" kind="show" identifier="showLocation" id="d5i-Sl-Ufr"/>
+                        <segue destination="SpV-6y-9up" kind="show" identifier="showGallery" id="Rlp-CY-sbe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QUj-9V-QOC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -230,6 +231,7 @@
                     <navigationItem key="navigationItem" title="Gallery" id="vIP-Ug-w28"/>
                     <connections>
                         <outlet property="collectionView" destination="I9r-7i-29W" id="fMZ-Nz-bvM"/>
+                        <outlet property="navigationItem" destination="vIP-Ug-w28" id="tAT-XT-esC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="v3p-cx-jai" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -260,6 +262,7 @@
                     <navigationItem key="navigationItem" title="Location" id="A5C-Tq-2IQ"/>
                     <connections>
                         <outlet property="map" destination="A3R-lz-jOT" id="xXp-w2-DVH"/>
+                        <outlet property="navigationItem" destination="A5C-Tq-2IQ" id="9w1-TY-VI9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9nk-mV-Gjd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

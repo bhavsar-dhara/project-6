@@ -10,7 +10,7 @@ import UIKit
 
 class GalleryViewController: UIViewController {
 
-    @IBOutlet weak var navigationBar: UINavigationBar!
+    @IBOutlet weak var navItem: UINavigationItem!
     @IBOutlet weak var collectionView: UICollectionView!
     
     private var imagePicker = UIImagePickerController()
@@ -26,12 +26,13 @@ class GalleryViewController: UIViewController {
         DataHelper.instance.getTravelData()
         
         let objLocation = appDelegate.arrTravelData[index!] as! PlaceDetails
+//        navItem.title = objLocation.name ?? ""
         
-        let item = UINavigationItem()
-        item.rightBarButtonItem = UIBarButtonItem(title: "Add Photo", style: .plain, target: self, action: #selector(addPhotosTapped))
-        item.leftBarButtonItem = UIBarButtonItem(title: "Back", style: .plain, target: self, action: #selector(addTapped))
-        navigationBar.items = [item]
-        navigationBar.topItem?.title = objLocation.name ?? ""
+//        let item = UINavigationItem()
+//        item.rightBarButtonItem = UIBarButtonItem(title: "Add Photo", style: .plain, target: self, action: #selector(addPhotosTapped))
+//        item.leftBarButtonItem = UIBarButtonItem(title: "Back", style: .plain, target: self, action: #selector(addTapped))
+//        navigationBar.items = [item]
+//        navigationBar.topItem?.title = objLocation.name ?? ""
         
         self.collectionView.register(UINib(nibName: "GalleryCell", bundle: nil), forCellWithReuseIdentifier: "GalleryCell")
         collectionView.reloadData()
