@@ -36,7 +36,7 @@ class LocationViewController: UIViewController {
 
     private func setUpInitialUI() {
         
-        locationEntity = appDelegate.arrTravelData[index!] as! PlaceDetails
+        locationEntity = appDelegate.arrTravelData[index!] as? PlaceDetails
 //        navItem.title = "\(locationEntity.name ?? "")'s Location"
         
 //        let item = UINavigationItem()
@@ -51,7 +51,7 @@ class LocationViewController: UIViewController {
     
     private func setUpMap() {
         
-        locationEntity = appDelegate.arrTravelData[index!] as! PlaceDetails
+        locationEntity = appDelegate.arrTravelData[index!] as? PlaceDetails
         let coordinate = CLLocationCoordinate2D(latitude: locationEntity!.latitude , longitude: locationEntity!.longitude)
         
         let annotation = MKPointAnnotation()

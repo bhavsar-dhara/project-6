@@ -26,7 +26,7 @@ class PlaceDetailViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
             
-        debugPrint("PlaceDetailVC: prepare: ", sender as? Int)
+        debugPrint("PlaceDetailVC: prepare: ", sender as? Int ?? 0)
         if (segue.identifier == "showGallery") {
             guard let gallerylVC = segue.destination as? GalleryViewController else {
                 debugPrint("segue.destination is not PlaceDetailViewController")

@@ -85,6 +85,12 @@ class HomeViewController: UIViewController {
         self.present(alert, animated: true, completion: nil)
     }
     
+    @IBAction func btnBack(_ sender: Any) {
+        
+        debugPrint("btnBack")
+        exit(0)
+    }
+    
     //MARK: - Custom methods
     
     func savePlace(title : String, lat: Double, long: Double) {
