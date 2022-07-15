@@ -15,13 +15,15 @@ class DataHelper {
     static var instance : DataHelper = DataHelper()
     
     // To save place/location name into core data
-    func savePlaceName(name : String) {
+    func savePlaceName(name : String, lat : Double, long : Double) {
         
         let managedContext = appDelegate.dataController.viewContext
         
         let objEntityLocation = NSEntityDescription.insertNewObject(forEntityName: "PlaceDetails", into: managedContext) as! PlaceDetails
         
         objEntityLocation.name = name
+        objEntityLocation.latitude = lat
+        objEntityLocation.longitude = long
         
         do {
             debugPrint("name: ", name)

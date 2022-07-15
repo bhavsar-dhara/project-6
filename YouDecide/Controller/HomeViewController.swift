@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import CoreLocation
 
 class HomeViewController: UIViewController {
     
@@ -17,6 +18,10 @@ class HomeViewController: UIViewController {
     var dataController: DataController?
     var cellsPerRow = 0
     
+    private var locationManager: CLLocationManager!
+    private var lat = 0.0
+    private var long = 0.0
+    
     //MARK: - UIviewcontroller methods
     
     override func viewDidLoad() {
@@ -25,7 +30,15 @@ class HomeViewController: UIViewController {
         debugPrint("HomeVC")
         // initialize collection view
         setupCollectionView()
-        //collectionView.register(HomeViewCell.self, forCellWithReuseIdentifier: HomeViewCell.reuseIdentifier)
+        
+        // Requesting permission for location
+        if (CLLocationManager.locationServicesEnabled()) {
+            locationManager = CLLocationManager()
+            locationManager.delegate = self
+            locationManager.desiredAccuracy = kCLLocationAccuracyBest
+            locationManager.requestAlwaysAuthorization()
+            locationManager.startUpdatingLocation()
+        }
 
         // Fetching data to update the UI
         DataHelper.instance.getTravelData()
@@ -40,7 +53,7 @@ class HomeViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
             
-        debugPrint("HomeVC: prepare: ", sender as? Int)
+        debugPrint("HomeVC: prepare: ", sender as? Int ?? 0)
         if (segue.identifier == "showDetail") {
             guard let placeDetailVC = segue.destination as? PlaceDetailViewController else {
                 debugPrint("segue.destination is not PlaceDetailViewController")
@@ -66,7 +79,7 @@ class HomeViewController: UIViewController {
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { [weak alert] (_) in
             let textField = alert?.textFields![0]
             print("Text field: \(textField!.text!)")
-            self.savePlace(title: textField!.text!)
+            self.savePlace(title: textField!.text!, lat: self.lat, long: self.long)
         }))
         
         self.present(alert, animated: true, completion: nil)
@@ -74,10 +87,10 @@ class HomeViewController: UIViewController {
     
     //MARK: - Custom methods
     
-    func savePlace(title : String) {
+    func savePlace(title : String, lat: Double, long: Double) {
         
         // Saving name and fetching data to update the UI
-        DataHelper.instance.savePlaceName(name: title)
+        DataHelper.instance.savePlaceName(name: title, lat: lat, long: long)
         DataHelper.instance.getTravelData()
         collectionView.reloadData()
     }
@@ -111,10 +124,6 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         // show the place details view
         self.performSegue(withIdentifier: "showDetail", sender: indexPath.row)
-        
-//        let placeDetailVC = PlaceDetailViewController(nibName: "PlaceDetailViewController", bundle: nil)
-//        placeDetailVC.index = indexPath.row
-//        self.navigationController?.pushViewController(placeDetailVC, animated: true)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -134,5 +143,16 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
             cellsPerRow = 5
         }
         flowLayout.invalidateLayout()
+    }
+}
+
+extension HomeViewController : CLLocationManagerDelegate {
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        
+        if let location = locations.last {
+            lat = location.coordinate.latitude
+            long = location.coordinate.longitude
+        }
     }
 }

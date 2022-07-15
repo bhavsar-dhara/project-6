@@ -159,8 +159,8 @@
                             <constraint firstItem="cAP-Rn-xZe" firstAttribute="top" secondItem="7Oa-JL-5NP" secondAttribute="top" constant="20" id="EO0-Kv-gj7"/>
                             <constraint firstItem="PpV-wO-oS6" firstAttribute="trailing" secondItem="50m-B4-DAQ" secondAttribute="leading" constant="-24" id="J29-5A-nJ6"/>
                             <constraint firstItem="PpV-wO-oS6" firstAttribute="top" secondItem="cAP-Rn-xZe" secondAttribute="bottom" constant="40" id="RdN-qa-bz7"/>
-                            <constraint firstItem="7Oa-JL-5NP" firstAttribute="trailing" secondItem="cAP-Rn-xZe" secondAttribute="trailing" id="SLd-Ki-R95"/>
-                            <constraint firstItem="7Oa-JL-5NP" firstAttribute="trailing" secondItem="50m-B4-DAQ" secondAttribute="trailing" constant="15" id="TaH-3U-RLm"/>
+                            <constraint firstItem="cAP-Rn-xZe" firstAttribute="trailing" secondItem="7Oa-JL-5NP" secondAttribute="trailing" id="SLd-Ki-R95"/>
+                            <constraint firstItem="50m-B4-DAQ" firstAttribute="trailing" secondItem="7Oa-JL-5NP" secondAttribute="trailing" constant="-15" id="TaH-3U-RLm"/>
                             <constraint firstItem="50m-B4-DAQ" firstAttribute="top" secondItem="cAP-Rn-xZe" secondAttribute="bottom" constant="40" id="wgH-QU-fW1"/>
                         </constraints>
                     </view>
@@ -266,7 +266,13 @@
                             <constraint firstItem="PFF-nU-7Dl" firstAttribute="trailing" secondItem="A3R-lz-jOT" secondAttribute="trailing" id="nkB-Ww-9MW"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Location" id="A5C-Tq-2IQ"/>
+                    <navigationItem key="navigationItem" title="Location" id="A5C-Tq-2IQ">
+                        <barButtonItem key="rightBarButtonItem" title="Update" id="xyd-op-gkT">
+                            <connections>
+                                <action selector="updateLocation" destination="ycf-ZL-SxN" id="Rj9-hp-vjV"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="map" destination="A3R-lz-jOT" id="xXp-w2-DVH"/>
                         <outlet property="navigationItem" destination="A5C-Tq-2IQ" id="9w1-TY-VI9"/>

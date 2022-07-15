@@ -16,6 +16,7 @@ class LocationViewController: UIViewController {
     @IBOutlet weak var map: MKMapView!
     
     var index : Int?
+    var locationEntity: PlaceDetails?
     
     private let span = MKCoordinateSpan.init(latitudeDelta: 0.01, longitudeDelta: 0.01)
     
@@ -35,7 +36,7 @@ class LocationViewController: UIViewController {
 
     private func setUpInitialUI() {
         
-        let locationEntity = appDelegate.arrTravelData[index!] as! PlaceDetails
+        locationEntity = appDelegate.arrTravelData[index!] as! PlaceDetails
 //        navItem.title = "\(locationEntity.name ?? "")'s Location"
         
 //        let item = UINavigationItem()
@@ -50,8 +51,8 @@ class LocationViewController: UIViewController {
     
     private func setUpMap() {
         
-        let locationEntity = appDelegate.arrTravelData[index!] as! PlaceDetails
-        let coordinate = CLLocationCoordinate2D(latitude: locationEntity.latitude , longitude: locationEntity.longitude)
+        locationEntity = appDelegate.arrTravelData[index!] as! PlaceDetails
+        let coordinate = CLLocationCoordinate2D(latitude: locationEntity!.latitude , longitude: locationEntity!.longitude)
         
         let annotation = MKPointAnnotation()
         annotation.coordinate = coordinate
@@ -59,7 +60,7 @@ class LocationViewController: UIViewController {
         map.setRegion(region, animated: true)
         map.addAnnotation(annotation)
         
-        if locationEntity.latitude == 0.0 {
+        if locationEntity!.latitude == 0.0 {
             /// Requesting permission for location
             if (CLLocationManager.locationServicesEnabled()) {
                 locationManager = CLLocationManager()
@@ -75,12 +76,7 @@ class LocationViewController: UIViewController {
     
     //MARK: - Button click methods
     
-    @objc func addTapped() {
-        
-        self.navigationController?.popViewController(animated: true)
-    }
-                    
-    @objc func saveTapped() {
+    @IBAction func updateLocation() {
         
         DataHelper.instance.updatePlaceLocation(title: (appDelegate.arrTravelData[index!] as? PlaceDetails)?.name ?? "", lat: locationManager.location?.coordinate.latitude ?? 0.0, long: locationManager.location?.coordinate.longitude ?? 0.0)
         self.navigationController?.popViewController(animated: true)
