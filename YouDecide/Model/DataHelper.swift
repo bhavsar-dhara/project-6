@@ -64,6 +64,7 @@ class DataHelper {
         let managedContext = appDelegate.dataController.viewContext
         
         do {
+            debugPrint("updateImage: ")
             let res = try managedContext.fetch(fetchRequest)
             if let arr =  res as? [NSManagedObject] {
                 if arr.count != 0 {
@@ -96,6 +97,7 @@ class DataHelper {
         
         do {
             appDelegate.arrTravelData = try managedContext.fetch(fetchRequest)
+            debugPrint("getTravelData: placeDetails = ", appDelegate.arrTravelData)
         } catch let error as NSError {
             print("Could not fetch the complete travel data. \(error), \(error.userInfo)")
         }

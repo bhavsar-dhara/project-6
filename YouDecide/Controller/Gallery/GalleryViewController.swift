@@ -11,11 +11,14 @@ import UIKit
 class GalleryViewController: UIViewController {
 
     @IBOutlet weak var navItem: UINavigationItem!
+    @IBOutlet weak var addPhotos: UIBarButtonItem!
     @IBOutlet weak var collectionView: UICollectionView!
     
     private var imagePicker = UIImagePickerController()
     
     var index : Int?
+    var objLocation: PlaceDetails?
+    var cellsPerRow = 0
     
     //MARK: - UIViewcontroller methods
     
@@ -23,30 +26,19 @@ class GalleryViewController: UIViewController {
         
         super.viewDidLoad()
         
+        setupCollectionView()
+        
         DataHelper.instance.getTravelData()
         
-        let objLocation = appDelegate.arrTravelData[index!] as! PlaceDetails
+        objLocation = appDelegate.arrTravelData[index!] as? PlaceDetails
+        debugPrint(objLocation?.name ?? "")
 //        navItem.title = objLocation.name ?? ""
-        
-//        let item = UINavigationItem()
-//        item.rightBarButtonItem = UIBarButtonItem(title: "Add Photo", style: .plain, target: self, action: #selector(addPhotosTapped))
-//        item.leftBarButtonItem = UIBarButtonItem(title: "Back", style: .plain, target: self, action: #selector(addTapped))
-//        navigationBar.items = [item]
-//        navigationBar.topItem?.title = objLocation.name ?? ""
-        
-        self.collectionView.register(UINib(nibName: "GalleryCell", bundle: nil), forCellWithReuseIdentifier: "GalleryCell")
         collectionView.reloadData()
     }
     
     //MARK: - Button click methods
     
-    @objc func addTapped() {
-        
-        self.navigationController?.popViewController(animated: true)
-    }
-
-    @objc func addPhotosTapped() {
-        
+    @IBAction func btnAddPhotos(_ sender: Any) {
         if UIImagePickerController.isSourceTypeAvailable(.savedPhotosAlbum) {
             imagePicker.delegate = self
             imagePicker.sourceType = .savedPhotosAlbum
@@ -74,9 +66,15 @@ extension GalleryViewController : UINavigationControllerDelegate, UIImagePickerC
 
 extension GalleryViewController : UICollectionViewDataSource, UICollectionViewDelegate , UICollectionViewDelegateFlowLayout {
     
+    func setupCollectionView() {
+        debugPrint("GalleryVC: setupCollectionView")
+        collectionView.dataSource = self
+        collectionView.delegate = self
+        collectionView.allowsMultipleSelection = true
+    }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-        let objLocation = appDelegate.arrTravelData[index!] as? PlaceDetails
         let arrImage = objLocation?.photos as? [UIImage]
         if let arr = arrImage {
             return arr.count
@@ -87,18 +85,32 @@ extension GalleryViewController : UICollectionViewDataSource, UICollectionViewDe
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "GalleryCell", for: indexPath) as! GalleryViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: GalleryViewCell.reuseIdentifier, for: indexPath as IndexPath) as! GalleryViewCell
         cell.layer.borderColor = UIColor.lightGray.cgColor
         cell.layer.borderWidth = 2.0
-        let objLocation = appDelegate.arrTravelData[index!] as? PlaceDetails
+        
         let arrImage = objLocation?.photos as? [UIImage]
         cell.img.image = arrImage![indexPath.row]
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        
-        return CGSize(width: (UIScreen.main.bounds.width / 2) - 6, height: 100.0)
+        let flowLayout = collectionViewLayout as! UICollectionViewFlowLayout
+        let totalSpace = flowLayout.sectionInset.left + flowLayout.sectionInset.right + (flowLayout.minimumInteritemSpacing * CGFloat(cellsPerRow - 1))
+        let size = Int((collectionView.bounds.width - totalSpace) / CGFloat(cellsPerRow))
+        return CGSize(width: size, height: size)
+    }
+    
+    override func viewWillLayoutSubviews() {
+        guard let flowLayout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout else {
+            return
+        }
+        if UIDevice.current.orientation == .portrait {
+            cellsPerRow = 3
+        } else {
+            cellsPerRow = 5
+        }
+        flowLayout.invalidateLayout()
     }
     
 }
