@@ -57,20 +57,11 @@ class PlaceDetailViewController: UIViewController {
     @IBAction func btnLocationClick(_ sender: Any) {
         // Redirecting to location screen
         self.performSegue(withIdentifier: "showLocation", sender: self.index)
-        
-//        let locationVC = LocationVC(nibName: "LocationVC", bundle: nil)
-//        locationVC.index = index
-//        self.navigationController?.pushViewController(locationVC, animated: true)
-        
     }
     
     @IBAction func btnGalleryClick(_ sender: Any) {
         // Redirecting to gallery  screen
         self.performSegue(withIdentifier: "showGallery", sender: self.index)
-        
-//        let galleryVC = GalleryVC(nibName: "GalleryVC", bundle: nil)
-//        galleryVC.index = index
-//        self.navigationController?.pushViewController(galleryVC, animated: true)
     }
     
 }
