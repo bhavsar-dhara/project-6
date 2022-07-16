@@ -83,6 +83,10 @@ class HomeViewController: UIViewController {
             self.savePlace(title: textField!.text!, lat: self.lat, long: self.long)
         }))
         
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { (action: UIAlertAction!) in
+            debugPrint("Cancle Alert")
+        }))
+        
         self.present(alert, animated: true, completion: nil)
     }
     
