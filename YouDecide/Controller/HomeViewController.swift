@@ -28,6 +28,7 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         
         debugPrint("HomeVC")
+        self.navItem.hidesBackButton = true
         // initialize collection view
         setupCollectionView()
         
@@ -85,7 +86,7 @@ class HomeViewController: UIViewController {
         self.present(alert, animated: true, completion: nil)
     }
     
-    @IBAction func btnBack(_ sender: Any) {
+    @objc func btnBack(_ sender: Any) {
         
         debugPrint("btnBack")
         exit(0)
