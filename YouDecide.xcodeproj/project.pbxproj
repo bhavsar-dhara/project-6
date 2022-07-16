@@ -37,6 +37,7 @@
 		D6F2455728831BCE0023BDB4 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D6F245192882FF6F0023BDB4 /* libz.tbd */; };
 		D6F2455828831BD50023BDB4 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6F2451B2882FF810023BDB4 /* QuartzCore.framework */; };
 		D6F2455928831BDD0023BDB4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6F2451D2882FF8C0023BDB4 /* UIKit.framework */; };
+		D6F2455B288369B00023BDB4 /* HomeViewController_GSMController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6F2455A288369B00023BDB4 /* HomeViewController_GSMController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,6 +92,7 @@
 		D6F2451D2882FF8C0023BDB4 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		D6F2455028831A620023BDB4 /* GooglePlaces.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GooglePlaces.framework; sourceTree = "<group>"; };
 		D6F2455228831B980023BDB4 /* GooglePlaces.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = GooglePlaces.bundle; path = GooglePlaces.framework/Resources/GooglePlaces.bundle; sourceTree = "<group>"; };
+		D6F2455A288369B00023BDB4 /* HomeViewController_GSMController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController_GSMController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -225,6 +227,7 @@
 			children = (
 				D6CE25E52860D555001664AC /* HomeViewController.swift */,
 				D6CE25E72860E7A8001664AC /* HomeViewCell.swift */,
+				D6F2455A288369B00023BDB4 /* HomeViewController_GSMController.swift */,
 			);
 			name = Home;
 			sourceTree = "<group>";
@@ -425,6 +428,7 @@
 				D6CE25F228616407001664AC /* GalleryViewCell.swift in Sources */,
 				D67656F0285E90DF00506993 /* PlaceLocation.swift in Sources */,
 				D67656FD285FB5D000506993 /* DataHelper.swift in Sources */,
+				D6F2455B288369B00023BDB4 /* HomeViewController_GSMController.swift in Sources */,
 				D67656C0285BC3BD00506993 /* YouDecide.xcdatamodeld in Sources */,
 				D67656B6285BC3BD00506993 /* AppDelegate.swift in Sources */,
 				D6CE25E82860E7A8001664AC /* HomeViewCell.swift in Sources */,

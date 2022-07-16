@@ -72,15 +72,7 @@ class LocationViewController: UIViewController {
         } else {
             print("Place pin is already stored")
         }
-    }
-    
-    //MARK: - Button click methods
-    
-    @IBAction func updateLocation() {
-        
-        DataHelper.instance.updatePlaceLocation(title: (appDelegate.arrTravelData[index!] as? PlaceDetails)?.name ?? "", lat: locationManager.location?.coordinate.latitude ?? 0.0, long: locationManager.location?.coordinate.longitude ?? 0.0)
-        self.navigationController?.popViewController(animated: true)
-    }
+    }    
 }
 
 extension LocationViewController : CLLocationManagerDelegate {

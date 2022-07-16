@@ -276,13 +276,7 @@
                             <constraint firstItem="PFF-nU-7Dl" firstAttribute="trailing" secondItem="A3R-lz-jOT" secondAttribute="trailing" id="nkB-Ww-9MW"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Location" id="A5C-Tq-2IQ">
-                        <barButtonItem key="rightBarButtonItem" title="Update" id="xyd-op-gkT">
-                            <connections>
-                                <action selector="updateLocation" destination="ycf-ZL-SxN" id="Rj9-hp-vjV"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Location" id="A5C-Tq-2IQ"/>
                     <connections>
                         <outlet property="map" destination="A3R-lz-jOT" id="xXp-w2-DVH"/>
                         <outlet property="navigationItem" destination="A5C-Tq-2IQ" id="9w1-TY-VI9"/>
