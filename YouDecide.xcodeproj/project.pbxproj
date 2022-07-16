@@ -29,6 +29,14 @@
 		D6CE25EE28616286001664AC /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6CE25ED28616286001664AC /* LocationViewController.swift */; };
 		D6CE25F028616299001664AC /* GalleryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6CE25EF28616299001664AC /* GalleryViewController.swift */; };
 		D6CE25F228616407001664AC /* GalleryViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6CE25F128616407001664AC /* GalleryViewCell.swift */; };
+		D6F2455128831A620023BDB4 /* GooglePlaces.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6F2455028831A620023BDB4 /* GooglePlaces.framework */; };
+		D6F2455328831B980023BDB4 /* GooglePlaces.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D6F2455228831B980023BDB4 /* GooglePlaces.bundle */; };
+		D6F2455428831BB00023BDB4 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6F245132882FF420023BDB4 /* CoreGraphics.framework */; };
+		D6F2455528831BBC0023BDB4 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6F245152882FF550023BDB4 /* CoreLocation.framework */; };
+		D6F2455628831BC40023BDB4 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D6F245172882FF650023BDB4 /* libc++.tbd */; };
+		D6F2455728831BCE0023BDB4 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D6F245192882FF6F0023BDB4 /* libz.tbd */; };
+		D6F2455828831BD50023BDB4 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6F2451B2882FF810023BDB4 /* QuartzCore.framework */; };
+		D6F2455928831BDD0023BDB4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6F2451D2882FF8C0023BDB4 /* UIKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +83,14 @@
 		D6CE25ED28616286001664AC /* LocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
 		D6CE25EF28616299001664AC /* GalleryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryViewController.swift; sourceTree = "<group>"; };
 		D6CE25F128616407001664AC /* GalleryViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryViewCell.swift; sourceTree = "<group>"; };
+		D6F245132882FF420023BDB4 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		D6F245152882FF550023BDB4 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		D6F245172882FF650023BDB4 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		D6F245192882FF6F0023BDB4 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		D6F2451B2882FF810023BDB4 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		D6F2451D2882FF8C0023BDB4 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		D6F2455028831A620023BDB4 /* GooglePlaces.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GooglePlaces.framework; sourceTree = "<group>"; };
+		D6F2455228831B980023BDB4 /* GooglePlaces.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = GooglePlaces.bundle; path = GooglePlaces.framework/Resources/GooglePlaces.bundle; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +98,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D6F2455928831BDD0023BDB4 /* UIKit.framework in Frameworks */,
+				D6F2455828831BD50023BDB4 /* QuartzCore.framework in Frameworks */,
+				D6F2455728831BCE0023BDB4 /* libz.tbd in Frameworks */,
+				D6F2455628831BC40023BDB4 /* libc++.tbd in Frameworks */,
+				D6F2455528831BBC0023BDB4 /* CoreLocation.framework in Frameworks */,
+				D6F2455428831BB00023BDB4 /* CoreGraphics.framework in Frameworks */,
+				D6F2455128831A620023BDB4 /* GooglePlaces.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -109,6 +132,7 @@
 				D67656CE285BC3BF00506993 /* YouDecideTests */,
 				D67656D8285BC3BF00506993 /* YouDecideUITests */,
 				D67656B3285BC3BD00506993 /* Products */,
+				D6F245122882FF420023BDB4 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -125,6 +149,8 @@
 		D67656B4285BC3BD00506993 /* YouDecide */ = {
 			isa = PBXGroup;
 			children = (
+				D6F2455228831B980023BDB4 /* GooglePlaces.bundle */,
+				D6F2455028831A620023BDB4 /* GooglePlaces.framework */,
 				D67656EA285BC3EF00506993 /* Model */,
 				D67656E9285BC3E700506993 /* View */,
 				D67656E8285BC3E000506993 /* Controller */,
@@ -246,6 +272,19 @@
 			path = Data;
 			sourceTree = "<group>";
 		};
+		D6F245122882FF420023BDB4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D6F2451D2882FF8C0023BDB4 /* UIKit.framework */,
+				D6F2451B2882FF810023BDB4 /* QuartzCore.framework */,
+				D6F245192882FF6F0023BDB4 /* libz.tbd */,
+				D6F245172882FF650023BDB4 /* libc++.tbd */,
+				D6F245152882FF550023BDB4 /* CoreLocation.framework */,
+				D6F245132882FF420023BDB4 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -350,6 +389,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D6F2455328831B980023BDB4 /* GooglePlaces.bundle in Resources */,
 				D67656C5285BC3BE00506993 /* LaunchScreen.storyboard in Resources */,
 				D67656C2285BC3BE00506993 /* Assets.xcassets in Resources */,
 				D67656BD285BC3BD00506993 /* Main.storyboard in Resources */,
@@ -500,9 +540,11 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				"LD_MAP_FILE_PATH[arch=*]" = "$(TARGET_TEMP_DIR)/$(PRODUCT_NAME)-LinkMap-$(CURRENT_VARIANT)-$(CURRENT_ARCH).txt";
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = "-ObjC";
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -557,6 +599,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
+				OTHER_LDFLAGS = "-ObjC";
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
@@ -572,6 +615,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 6HQNF7FQ7P;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/YouDecide",
+				);
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = YouDecide/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -585,6 +633,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.dharaub.YouDecide;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -601,6 +650,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 6HQNF7FQ7P;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/YouDecide",
+				);
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = YouDecide/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -614,6 +668,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.dharaub.YouDecide;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;

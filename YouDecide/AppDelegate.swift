@@ -7,6 +7,7 @@
 
 import UIKit
 import CoreData
+import GooglePlaces
 
 let appDelegate = UIApplication.shared.delegate as! AppDelegate
 
@@ -27,6 +28,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let navigationController = window?.rootViewController as! UINavigationController
         let splashView = navigationController.topViewController as! ViewController
         splashView.dataController = (UIApplication.shared.delegate as? AppDelegate)?.dataController
+        GMSPlacesClient.provideAPIKey("AIzaSyBNLRM1ncgW-Veo9luICk0B8w913FvF-TU")
         
         return true
     }

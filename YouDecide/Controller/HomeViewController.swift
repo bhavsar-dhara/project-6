@@ -8,6 +8,7 @@
 import Foundation
 import UIKit
 import CoreLocation
+import GooglePlaces
 
 class HomeViewController: UIViewController {
     
@@ -21,6 +22,8 @@ class HomeViewController: UIViewController {
     private var locationManager: CLLocationManager!
     private var lat = 0.0
     private var long = 0.0
+    private var placesClient: GMSPlacesClient!
+    
     
     //MARK: - UIviewcontroller methods
     
@@ -44,6 +47,8 @@ class HomeViewController: UIViewController {
         // Fetching data to update the UI
         DataHelper.instance.getTravelData()
         collectionView.reloadData()
+        
+        placesClient = GMSPlacesClient.shared()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -69,25 +74,42 @@ class HomeViewController: UIViewController {
     @IBAction func btnAddPlaceClick(_ sender: Any) {
         
         debugPrint("btnAddPlaceClick")
-        
-        // Presenting alert to enter place name
-        let alert = UIAlertController(title: "Travel diaries", message: "Enter place name", preferredStyle: .alert)
-        
-        alert.addTextField { (textField) in
-            textField.placeholder = "Plese enter name here"
-        }
-        
-        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { [weak alert] (_) in
-            let textField = alert?.textFields![0]
-            print("Text field: \(textField!.text!)")
-            self.savePlace(title: textField!.text!, lat: self.lat, long: self.long)
-        }))
-        
-        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { (action: UIAlertAction!) in
-            debugPrint("Cancle Alert")
-        }))
-        
-        self.present(alert, animated: true, completion: nil)
+        let autocompleteController = GMSAutocompleteViewController()
+            autocompleteController.delegate = self
+
+//            // Specify the place data types to return.
+//            let fields: GMSPlaceField = GMSPlaceField(rawValue: UInt(GMSPlaceField.name.rawValue) |
+//              UInt(GMSPlaceField.placeID.rawValue))!
+//            autocompleteController.placeFields = fields
+//
+//            // Specify a filter.
+//            let filter = GMSAutocompleteFilter()
+//            filter.type = .address
+//            autocompleteController.autocompleteFilter = filter
+
+            // Display the autocomplete view controller.
+            present(autocompleteController, animated: true, completion: nil)
+//
+//        // Presenting alert to enter place name
+//        let alert = UIAlertController(title: "Travel diaries", message: "Enter place name", preferredStyle: .alert)
+//
+//        alert.addTextField { (textField) in
+//            textField.placeholder = "Plese enter name here"
+//        }
+//
+//        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { [weak alert] (_) in
+//          let textField = alert?.textFields![0]
+//
+//            print("Text field: \(textField!.text!)")
+//                self.savePlace(title: textField!.text!, lat: self.lat, long: self.long)
+//
+//        }))
+//
+//        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { (action: UIAlertAction!) in
+//            debugPrint("Cancle Alert")
+//        }))
+//
+//        self.present(alert, animated: true, completion: nil)
     }
     
     @objc func btnBack(_ sender: Any) {
@@ -166,4 +188,39 @@ extension HomeViewController : CLLocationManagerDelegate {
             long = location.coordinate.longitude
         }
     }
+}
+
+extension HomeViewController: GMSAutocompleteViewControllerDelegate {
+
+  // Handle the user's selection.
+  func viewController(_ viewController: GMSAutocompleteViewController, didAutocompleteWith place: GMSPlace) {
+      print("Place name: \(String(describing: place.name))")
+      //print("Place ID: \(String(describing: place.placeID))")
+      //print("Place attributions: \(String(describing: place.attributions))")
+
+      
+      let newLocation = savePlace(title: place.name ?? "Unknown Location", lat: place.coordinate.latitude, long: place.coordinate.longitude)
+      collectionView.reloadData()
+      dismiss(animated: true, completion: nil)
+  }
+
+  func viewController(_ viewController: GMSAutocompleteViewController, didFailAutocompleteWithError error: Error) {
+    // TODO: handle the error.
+    print("Error: ", error.localizedDescription)
+  }
+
+  // User canceled the operation.
+  func wasCancelled(_ viewController: GMSAutocompleteViewController) {
+    dismiss(animated: true, completion: nil)
+  }
+
+  // Turn the network activity indicator on and off again.
+  func didRequestAutocompletePredictions(_ viewController: GMSAutocompleteViewController) {
+    UIApplication.shared.isNetworkActivityIndicatorVisible = true
+  }
+
+  func didUpdateAutocompletePredictions(_ viewController: GMSAutocompleteViewController) {
+    UIApplication.shared.isNetworkActivityIndicatorVisible = false
+  }
+
 }
