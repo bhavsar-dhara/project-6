@@ -9,6 +9,10 @@ The user will be able to add the memories from their gallery.
 
 All of these data is stored using Core Data which will allow the user to view all these info anytime and anywhere.
 
+App Supported Versions:
+- iOS 15.2+
+- Swift 5.5+
+- Xcode 12.3+
 
 
 
