@@ -125,16 +125,15 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="1" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cAP-Rn-xZe">
-                                <rect key="frame" x="0.0" y="108" width="414" height="41"/>
+                                <rect key="frame" x="0.0" y="108" width="414" height="30"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PpV-wO-oS6">
-                                <rect key="frame" x="15" y="178" width="180" height="135"/>
+                                <rect key="frame" x="20" y="168" width="172" height="42"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="135" id="IOB-J1-gjr"/>
-                                    <constraint firstAttribute="width" constant="180" id="q8r-jC-Y8Z"/>
+                                    <constraint firstAttribute="height" constant="42" id="DTe-2Y-7wA"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="gray" title="Location">
@@ -145,10 +144,9 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="50m-B4-DAQ">
-                                <rect key="frame" x="219" y="178" width="175" height="135"/>
+                                <rect key="frame" x="222" y="168" width="172" height="42"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="175" id="bYI-HR-tT8"/>
-                                    <constraint firstAttribute="height" constant="135" id="mu8-2O-arD"/>
+                                    <constraint firstAttribute="height" constant="42" id="bB5-aI-9QN"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="gray" title="Gallery">
@@ -162,16 +160,15 @@
                         <viewLayoutGuide key="safeArea" id="7Oa-JL-5NP"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="7Oa-JL-5NP" firstAttribute="bottom" secondItem="PpV-wO-oS6" secondAttribute="bottom" constant="549" id="2Nn-Tv-MtQ"/>
-                            <constraint firstItem="50m-B4-DAQ" firstAttribute="top" secondItem="cAP-Rn-xZe" secondAttribute="bottom" constant="29" id="7nj-Sw-FmS"/>
-                            <constraint firstItem="7Oa-JL-5NP" firstAttribute="bottom" secondItem="50m-B4-DAQ" secondAttribute="bottom" constant="549" id="88z-tX-3pH"/>
+                            <constraint firstItem="50m-B4-DAQ" firstAttribute="top" secondItem="cAP-Rn-xZe" secondAttribute="bottom" constant="30" id="7nj-Sw-FmS"/>
                             <constraint firstItem="cAP-Rn-xZe" firstAttribute="leading" secondItem="7Oa-JL-5NP" secondAttribute="leading" id="8yX-5Q-oJU"/>
                             <constraint firstItem="cAP-Rn-xZe" firstAttribute="top" secondItem="7Oa-JL-5NP" secondAttribute="top" constant="20" id="EO0-Kv-gj7"/>
-                            <constraint firstItem="PpV-wO-oS6" firstAttribute="leading" secondItem="7Oa-JL-5NP" secondAttribute="leading" constant="15" id="KAc-b0-6GT"/>
-                            <constraint firstItem="50m-B4-DAQ" firstAttribute="leading" secondItem="PpV-wO-oS6" secondAttribute="trailing" constant="24" id="OF7-Gt-DZJ"/>
+                            <constraint firstItem="PpV-wO-oS6" firstAttribute="leading" secondItem="7Oa-JL-5NP" secondAttribute="leading" constant="20" id="KAc-b0-6GT"/>
+                            <constraint firstItem="50m-B4-DAQ" firstAttribute="width" secondItem="PpV-wO-oS6" secondAttribute="width" id="M4s-Y4-lC3"/>
                             <constraint firstItem="cAP-Rn-xZe" firstAttribute="trailing" secondItem="7Oa-JL-5NP" secondAttribute="trailing" id="SLd-Ki-R95"/>
-                            <constraint firstItem="PpV-wO-oS6" firstAttribute="top" secondItem="cAP-Rn-xZe" secondAttribute="bottom" constant="29" id="Ubh-l6-gJa"/>
-                            <constraint firstItem="7Oa-JL-5NP" firstAttribute="trailing" secondItem="50m-B4-DAQ" secondAttribute="trailing" constant="20" id="kCM-LR-dW5"/>
+                            <constraint firstItem="PpV-wO-oS6" firstAttribute="top" secondItem="cAP-Rn-xZe" secondAttribute="bottom" constant="30" id="Ubh-l6-gJa"/>
+                            <constraint firstItem="50m-B4-DAQ" firstAttribute="trailing" secondItem="7Oa-JL-5NP" secondAttribute="trailing" constant="-20" id="kCM-LR-dW5"/>
+                            <constraint firstItem="50m-B4-DAQ" firstAttribute="leading" secondItem="PpV-wO-oS6" secondAttribute="trailing" constant="30" id="nxR-QT-52g"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Place Detail" id="9u0-hb-4mY"/>
@@ -288,7 +285,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="plus" catalog="system" width="32" height="32"/>
+        <image name="plus" catalog="system" width="128" height="113"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
