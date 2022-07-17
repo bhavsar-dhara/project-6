@@ -11,3 +11,7 @@ All of these data is stored using Core Data which will allow the user to view al
 
 
 
+
+
+https://user-images.githubusercontent.com/15159158/179375655-f3007563-9329-4259-9cdd-c7be393ddab0.mov
+
