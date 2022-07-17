@@ -38,15 +38,6 @@ class LocationViewController: UIViewController {
         
         locationEntity = appDelegate.arrTravelData[index!] as? PlaceDetails
 //        navItem.title = "\(locationEntity.name ?? "")'s Location"
-        
-//        let item = UINavigationItem()
-//        item.leftBarButtonItem = UIBarButtonItem(title: "Back", style: .plain, target: self, action: #selector(addTapped))
-//        if locationEntity.latitude == 0.0 {
-//            item.rightBarButtonItem = UIBarButtonItem(title: "Save", style: .plain, target: self, action: #selector(saveTapped))
-//        }
-//        navigationBar.items = [item]
-//
-//        navigationBar.topItem?.title = "\(locationEntity.name ?? "")'s Location"
     }
     
     private func setUpMap() {

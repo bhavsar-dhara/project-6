@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		D67656B6285BC3BD00506993 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67656B5285BC3BD00506993 /* AppDelegate.swift */; };
-		D67656BA285BC3BD00506993 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67656B9285BC3BD00506993 /* ViewController.swift */; };
+		D67656BA285BC3BD00506993 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67656B9285BC3BD00506993 /* SplashViewController.swift */; };
 		D67656BD285BC3BD00506993 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D67656BB285BC3BD00506993 /* Main.storyboard */; };
 		D67656C0285BC3BD00506993 /* YouDecide.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D67656BE285BC3BD00506993 /* YouDecide.xcdatamodeld */; };
 		D67656C2285BC3BE00506993 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D67656C1285BC3BE00506993 /* Assets.xcassets */; };
@@ -60,7 +60,7 @@
 /* Begin PBXFileReference section */
 		D67656B2285BC3BD00506993 /* YouDecide.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YouDecide.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D67656B5285BC3BD00506993 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		D67656B9285BC3BD00506993 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		D67656B9285BC3BD00506993 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		D67656BC285BC3BD00506993 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D67656BF285BC3BD00506993 /* YouDecide.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = YouDecide.xcdatamodel; sourceTree = "<group>"; };
 		D67656C1285BC3BE00506993 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -217,7 +217,7 @@
 		D67656F5285FB38A00506993 /* Splash */ = {
 			isa = PBXGroup;
 			children = (
-				D67656B9285BC3BD00506993 /* ViewController.swift */,
+				D67656B9285BC3BD00506993 /* SplashViewController.swift */,
 			);
 			path = Splash;
 			sourceTree = "<group>";
@@ -422,7 +422,7 @@
 			files = (
 				D67656EE285E8F6D00506993 /* PlaceDetail.swift in Sources */,
 				D6CE25F028616299001664AC /* GalleryViewController.swift in Sources */,
-				D67656BA285BC3BD00506993 /* ViewController.swift in Sources */,
+				D67656BA285BC3BD00506993 /* SplashViewController.swift in Sources */,
 				D67656EC285E38BE00506993 /* UserDataManager.swift in Sources */,
 				D67656F2285E914E00506993 /* PlaceInfo.swift in Sources */,
 				D6CE25F228616407001664AC /* GalleryViewCell.swift in Sources */,
